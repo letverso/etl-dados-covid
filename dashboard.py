@@ -1,4 +1,4 @@
-import streamlit as st
+"""import streamlit as st
 import pandas as pd
 import sqlite3
 import plotly.express as px
@@ -37,3 +37,14 @@ st.plotly_chart(fig2, use_container_width=True)
 # Rodapé
 st.markdown("---")
 st.markdown("👩‍💻 Feito por Let com 💖")
+
+
+TESTE PQ O STREAMLIT NÃO ESTÁ ENCONTRANDO A COLUNA 'estado' NO BANCO DE DADOS
+"""
+
+import sqlite3
+import pandas as pd
+
+conn = sqlite3.connect("database/covid_data.db")
+df = pd.read_sql_query("SELECT * FROM covid_data LIMIT 5", conn)
+print(df.columns)
